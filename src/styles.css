@@ -135,3 +135,31 @@
 @utility animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
 @utility animate-fade-up { animation: fade-up 0.8s ease-out both; }
 @utility animate-scan { animation: scan 8s linear infinite; }
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-cursor::after {
+  content: '|';
+  margin-left: 2px;
+  color: var(--color-primary);
+  animation: blink-cursor 1s step-end infinite;
+}
+
+@utility skill-bar {
+  position: relative;
+  height: 4px;
+  border-radius: 2px;
+  background: oklch(1 0 0 / 0.06);
+  overflow: hidden;
+}
+
+@utility skill-bar-fill {
+  position: absolute;
+  inset: 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-primary), oklch(0.65 0.25 295));
+  transform-origin: left;
+}
