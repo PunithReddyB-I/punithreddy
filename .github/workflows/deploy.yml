@@ -37,7 +37,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './.output/public' # Lovable and Vite build files into the dist folder
+          path: './dist' # Lovable and Vite build files into the dist folder
 
       - name: Deploy to GitHub Pages
         id: deployment
